@@ -1,0 +1,23 @@
+$primaryColor: #44c889;
+$secondaryColor: #8ca59a;
+$successColor: #349798;
+$warningColor: #ce9457;
+$dangerColor: #b83e79;
+
+// Button
+.ant-btn-primary {
+  background: $primaryColor;
+  color: white;
+  :hover > & {
+    background: darken($primaryColor, 12%);
+  }
+}
+
+// Menu
+.ant-menu-item-active,
+.ant-menu-item:hover,
+.ant-menu-item-selected {
+  color: white !important;
+  font-weight: bold;
+  border-bottom: 2px solid $primaryColor !important;
+}
