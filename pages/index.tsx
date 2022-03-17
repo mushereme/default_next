@@ -1,86 +1,79 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import Link from 'next/link';
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="bg-black">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Go Cars</title>
+        <link
+          rel="icon"
+          href="https://cdn-icons-png.flaticon.com/512/3202/3202926.png"
+        />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <img
+        className="w-full h-full object-cover absolute inset-0"
+        src="https://res.cloudinary.com/dzih5nqhg/image/upload/v1637120985/gocars/54848_h0cxfx.png"
+      />
+      <nav
+        id="nav"
+        className="fixed inset-x-0 top-0 flex flex-row justify-between z-10 text-white bg-transparent"
+      >
+        <div className="p-4">
+          <div className="font-extrabold tracking-widest text-xl">
+            <a
+              href="#"
+              className="transition duration-500 hover:text-green-500"
+            >
+              Go Cars
+            </a>
+          </div>
+        </div>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
+        <div className="p-4 flex flex-row justify-between font-bold">
           <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            id="hide-after-click"
+            href="https://www.facebook.com/GoCarsMn"
+            className="mx-4 text-lg  border-b-2 border-transparent hover:border-b-2 hover:border-green-300 transition duration-500"
           >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            Facebook
           </a>
         </div>
-      </main>
+      </nav>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+      <header
+        id="up"
+        className="bg-center bg-fixed bg-no-repeat bg-cover h-screen relative"
+      >
+        <div className="h-screen flex items-center justify-center">
+          <div className="mx-2 text-center">
+            <h1 className="text-gray-100 font-extrabold text-4xl xs:text-5xl md:text-6xl">
+              Авто Сэлбэг
+            </h1>
+            <h2 className="text-gray-200 font-semibold text-lg leading-tight">
+              Янз бүрийн автомашины янз бүрийн сэлбэгүүдийг дэлхийн хаанаас ч
+              нийлүүлнэ.
+            </h2>
+            <div className="center">
+              <Link href="/order">
+                <button className="px-5 py-3 my-5 mx-2 bg-green-700 hover:bg-green-800 font-bold text-white rounded border-2 border-transparent hover:border-green-800 shadow-md transition duration-500 md:text-xl">
+                  Захиалга өгөх
+                </button>
+              </Link>
+            </div>
+            <div className="inline-flex mt-10">
+              <p className="text-green-400 w-3/5 mx-auto">
+                Манай цахим худалдаа болон захиалгын веб сайт хийгдэж байгаа тул
+                та бараа худалдан авах болон захиалах бол
+                https://www.facebook.com/GoCarsMn линкээр орж мессенжерээр
+                чатлах болон 95283779, 99115892 дугаарын утсаар холбогдохыг
+                хүсье.
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
     </div>
-  )
+  );
 }
-
-export default Home
