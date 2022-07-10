@@ -1,11 +1,7 @@
-import { useState } from "react";
-import { Button, Form, message, Steps } from "antd"
+import React, { useState } from "react";
+import { Form, message, Steps } from "antd"
 import { PersonalInformation, BankInformation, SupportingDocuments } from "./RegistrationContent";
 import RegistrationAction from "./RegistrationAction";
-
-const footerLayout = {
-  wrapperCol: { offset: 4, span: 16 },
-}
 
 export const RegistrationForm = (props) => {
 

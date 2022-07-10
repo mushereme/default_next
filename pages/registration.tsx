@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Head from "next/head";
 
 import { RegistrationHeader } from "../components/Layout/RegistrationHeader";

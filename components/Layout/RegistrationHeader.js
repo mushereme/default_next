@@ -1,7 +1,7 @@
 
+import React from "react";
 
-
-export const RegistrationHeader = (props) => {
+export const RegistrationHeader = () => {
 
   return (
     <div

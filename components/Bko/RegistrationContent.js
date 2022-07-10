@@ -1,17 +1,15 @@
+import React from "react";
+
 import {
     Button,
     Form,
-    Space,
     Input,
     Upload,
     message,
-    InputNumber,
-    Checkbox,
     Radio
   } from "antd";
   
-  import { MinusCircleOutlined, PlusOutlined, UploadOutlined } from '@ant-design/icons';
-import { FormProvider } from "rc-field-form";
+import { UploadOutlined } from '@ant-design/icons';
    
   //   #####  #     #  #####  ####### ####### #     # ####### ######  
   //  #     # #     # #     #    #    #     # ##   ## #       #     # 
@@ -21,7 +19,7 @@ import { FormProvider } from "rc-field-form";
   //  #     # #     # #     #    #    #     # #     # #       #    #  
   //   #####   #####   #####     #    ####### #     # ####### #     # 
                                                                   
-  export const PersonalInformation = (props) => {
+  export const PersonalInformation = () => {
   
       
     return (
@@ -117,8 +115,6 @@ import { FormProvider } from "rc-field-form";
                                                        
   export const BankInformation = (props) => {
   
-    const { form } = props;
-  
     return (
       <>
         <Form.Item
@@ -156,7 +152,7 @@ import { FormProvider } from "rc-field-form";
   
   export const SupportingDocuments = (props) => {
   
-    const { form, state } = props;
+    const { state } = props;
   
     const normFile = (e) => {
       return e && e?.file?.response?.url;

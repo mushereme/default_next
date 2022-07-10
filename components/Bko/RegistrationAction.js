@@ -1,12 +1,11 @@
+import React from "react";
 import {
-    Button,
-    Form,
-    message
-  } from "antd";
+    Button
+} from "antd";
   
   const RegistrationAction = (props) => {
   
-    const { current, changeStep, steps, form } = props;
+    const { current, changeStep, steps } = props;
   
     return (
       <div className="steps-action">
