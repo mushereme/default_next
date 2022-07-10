@@ -54,7 +54,7 @@ export const RegistrationForm = (props) => {
         <Form
           form={form}
           name="checkRedeem"
-          layout="horizontal"
+          layout="vertical"
           initialValues={{
             redeemId: props?.state?.id
           }}
