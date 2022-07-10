@@ -6,7 +6,7 @@ import { mainConfig } from "../../config/config";
 export const loadApi = async (props) => {
     
   var config = {
-    url: mainConfig.JSON_URL,
+    url: mainConfig.BACKEND_URL + props.url,
     method: props.method,
     header: {
       headers: {
@@ -17,25 +17,17 @@ export const loadApi = async (props) => {
       }),
     },
     data: {
-      username: mainConfig.USERNAME,
-      password: mainConfig.PASSWORD,
-      command: props.command,
-      parameters: {
-        ...props.parameters
-      }
+      ...props.parameters
     }
   };
   
   return await new Promise(async (resolve, reject) => {
     await axios(config).then((resp) => {
-      if(resp.data.response.status === "success") {
-        resolve(resp?.data?.response?.result || {});
-      } else {
-        reject(resp?.data?.response?.text);
-      }
+      // console.log("==RESP: ", resp);
+      resolve(resp?.data?.data || {});
     }).catch((err) => {
-      console.log("ERR: ", err.response);
-      reject();
+      // console.log("ERR: ", err.response);
+      reject(err.response?.data?.error);
     })
   });
 };
