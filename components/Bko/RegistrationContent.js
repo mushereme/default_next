@@ -113,7 +113,7 @@ import { UploadOutlined } from '@ant-design/icons';
   //    # #   #       #     #  #  #     # #       #       
   //     #    ####### #     # ###  #####  ####### ####### 
                                                        
-  export const BankInformation = (props) => {
+  export const BankInformation = () => {
   
     return (
       <>
@@ -152,8 +152,6 @@ import { UploadOutlined } from '@ant-design/icons';
   
   export const SupportingDocuments = (props) => {
   
-    const { state } = props;
-  
     const normFile = (e) => {
       return e && e?.file?.response?.url;
     };
@@ -183,7 +181,7 @@ import { UploadOutlined } from '@ant-design/icons';
                     <Radio value="0">Үгүй</Radio>
                 </Radio.Group>
             </Form.Item>
-            <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">{state == true ? 'Иргэний үнэмлэхний зураг оруулна уу!' : 'Эцэг эхийн иргэний үнэмлэх!'}</div>
+            <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">{props.state == true ? 'Иргэний үнэмлэхний зураг оруулна уу!' : 'Эцэг эхийн иргэний үнэмлэх!'}</div>
             <Form.Item
                 label="Урд тал"
                 name="idFront"
@@ -222,7 +220,7 @@ import { UploadOutlined } from '@ant-design/icons';
                 <Button icon={<UploadOutlined />}>Upload</Button>
                 </Upload>
             </Form.Item>
-            {state == false && (
+            {props.state == false && (
                 <>
                     <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">Төрсөний гэрчилгээний зураг оруулна уу!</div>
                     <Form.Item

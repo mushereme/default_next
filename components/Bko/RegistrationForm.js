@@ -9,7 +9,6 @@ export const RegistrationForm = (props) => {
 
   const [current, setCurrent] = useState(0);
   const [hide, setHide] = useState(true);
-  const { state, onFinish } = props;
 
   const steps = [
     {
@@ -57,9 +56,9 @@ export const RegistrationForm = (props) => {
           name="checkRedeem"
           layout="horizontal"
           initialValues={{
-            redeemId: state.id
+            redeemId: props?.state?.redeem?.id
           }}
-          onFinish={onFinish}
+          onFinish={props?.onFinish}
           onValuesChange={onFieldChange}
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 16 }}
@@ -74,7 +73,7 @@ export const RegistrationForm = (props) => {
             <div className="steps-content my-16">
               {steps.map((step, index) => (
                 <div key={index} className={`${index === current ? 'relative' : 'hidden'}`}>
-                  {step.content}
+                  {step?.content}
                 </div>
               ))}
             </div>

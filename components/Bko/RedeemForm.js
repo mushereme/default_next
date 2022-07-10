@@ -6,8 +6,6 @@ export const RedeemForm = (props) => {
 
   const [form] = Form.useForm();
 
-  const { onFinish } = props;
-
   return (
     <div>
       <div className="text-center text-indigo-800 text-3xl mt-16">ТАНЫ БКО БЭЛГИЙН КАРТЫГ ХҮЛЭЭЖ БАЙНА</div>
@@ -16,7 +14,7 @@ export const RedeemForm = (props) => {
         <Form
           form={form}
           name="checkRedeem"
-          onFinish={onFinish}
+          onFinish={props.onFinish}
           >
           <Form.Item
             name="serialNumber"

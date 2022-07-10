@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/globals.css'
 import 'antd/dist/antd.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app'
 import { RedeemStore } from "../context/RedeemContext";
 
 import { 
