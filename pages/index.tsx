@@ -28,5 +28,5 @@ export default function RedeemPage() {
       {/* <MiddleMenu /> */}
       <BkoTerms />
     </div>
-  );
+  )
 }
