@@ -56,7 +56,7 @@ export const RegistrationForm = (props) => {
           name="checkRedeem"
           layout="horizontal"
           initialValues={{
-            redeemId: props?.state?.redeem?.id
+            redeemId: props?.state?.id
           }}
           onFinish={props?.onFinish}
           onValuesChange={onFieldChange}
