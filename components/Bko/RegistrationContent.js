@@ -178,6 +178,26 @@ import { UploadOutlined } from '@ant-design/icons';
   
     return (
         <>
+            <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">Хэвэлмэл картын зургыг оруулна уу.</div>
+            <Form.Item
+                label="Картын зураг"
+                name="redeemPhoto"
+                valuePropName="file"
+                getValueFromEvent={normFile}
+                rules={[{
+                    required: true, 
+                    message: "Урд тал талбарыг бөглөнө үү."
+                }]}
+            >
+                <Upload
+                    name="file" 
+                    listType="picture"
+                    action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
+                    onChange={uploader}
+                >
+                <Button icon={<UploadOutlined />}>Upload</Button>
+                </Upload>
+            </Form.Item>
             <Form.Item
                 name="isAdult"
                 label="Насанд хүрсэн эсэх"
