@@ -23,7 +23,7 @@ export const RedeemForm = (props) => {
               message: "Энэ талбарыг бөглөнө үү."
             }]}
             >
-            <Input required placeholder="XXXX-XXXX-XXXX" size="large" />
+            <Input required placeholder="XXXX-XXXX-XXXX" maxLength={12} size="large" />
           </Form.Item>
           <Form.Item className="text-center ">
             <Button
