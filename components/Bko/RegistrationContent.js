@@ -47,7 +47,7 @@ import { UploadOutlined } from '@ant-design/icons';
         </Form.Item>  
         <Form.Item
             label="Ургийн овог"
-            name="familyname"
+            name="familyName"
             rules={[{
             required: true, 
             message: "Ургын овог талбарыг бөглөнө үү."
@@ -57,7 +57,7 @@ import { UploadOutlined } from '@ant-design/icons';
         </Form.Item>  
         <Form.Item
             label="Овог"
-            name="firstName"
+            name="lastName"
             rules={[{
             required: true, 
             message: "Овог талбарыг бөглөнө үү."
@@ -65,6 +65,16 @@ import { UploadOutlined } from '@ant-design/icons';
             >
             <Input />
         </Form.Item>  
+        <Form.Item
+            label="Нэр"
+            name="firstName"
+            rules={[{
+            required: true, 
+            message: "Овог талбарыг бөглөнө үү."
+            }]}
+            >
+            <Input />
+        </Form.Item> 
         <Form.Item
             label="Гэрийн хаяг"
             name="address"
