@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <div className='container mx-auto'>
             <div className="flex justify-between">
               <div> 
-                <img src='https://res.cloudinary.com/daliec2ib/image/upload/v1657370030/BKO/236309417_128750226130749_2479255844028366833_n_w3o7d8.png' width="50px" height="auto"/>
+                <img src='https://res.cloudinary.com/daliec2ib/image/upload/v1658147950/BKO/assets/273269846_956798281707222_3269984056906119710_n_gccix1.png' width="50px" height="auto"/>
               </div>
               <div>
                 <div>Phone: (976) 9920-3430</div>
