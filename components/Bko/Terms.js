@@ -4,8 +4,8 @@ export const BkoTerms = () => {
 
 
   return (
-    <div className="container mx-auto">
-      <div className="my-12">
+    <div className="container mx-auto ">
+      <div className="my-12 mx-4">
         <p className="italic">Үүнийг уншина уу.</p>
         <div className="text-gray-600 text-sm" style={{lineHeight: '19px'}}> 
           <div>

@@ -6,11 +6,60 @@ import {
     Input,
     Upload,
     message,
-    Radio
+    Radio,
+    Select
   } from "antd";
   
 import { UploadOutlined } from '@ant-design/icons';
    
+
+
+
+
+
+
+
+
+
+
+
+const banks = [
+    {
+        value: "Худалдаа хөгжлийн банк",
+        name: "Худалдаа хөгжлийн банк"
+    },{
+        value: "ХААН банк",
+        name: "ХААН банк"
+    },{
+        value: "Голомт банк",
+        name: "Голомт банк"
+    },{
+        value: "Төрийн банк",
+        name: "Төрийн банк"
+    },{
+        value: "Тээвэр хөгжлийн банк",
+        name: "Тээвэр хөгжлийн банк"
+    },{
+        value: "Ариг банк",
+        name: "Ариг банк"
+    },{
+        value: "Капитрон банк",
+        name: "Капитрон банк"
+    },{
+        value: "Үндэсний хөрөнгө оруулалтын банк",
+        name: "Үндэсний хөрөнгө оруулалтын банк"
+    },{
+        value: "Хас банк",
+        name: "Хас банк"
+    },{
+        value: "Богд банк",
+        name: "Богд банк"
+    },{
+        value: "Чингис Хаан банк",
+        name: "Чингис Хаан банк"
+    },
+]
+
   //   #####  #     #  #####  ####### ####### #     # ####### ######  
   //  #     # #     # #     #    #    #     # ##   ## #       #     # 
   //  #       #     # #          #    #     # # # # # #       #     # 
@@ -42,6 +91,7 @@ import { UploadOutlined } from '@ant-design/icons';
                 message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
             }
             ]}
+            normalize={value => (value || '').toUpperCase()} 
             >
             <Input maxLength="10"/>
         </Form.Item>  
@@ -135,7 +185,11 @@ import { UploadOutlined } from '@ant-design/icons';
                 message: "Банкны нэр талбарыг бөглөнө үү."
             }]}
         > 
-            <Input />
+            <Select placeholder="Сонгоно уу.">
+                {banks.map((item, index) => (
+                    <Select.Option key={index} value={item.value}>{item.name}</Select.Option>
+                ))}
+            </Select>
         </Form.Item>
         <Form.Item
             label="Банкны дансны дугаар"
@@ -178,7 +232,7 @@ import { UploadOutlined } from '@ant-design/icons';
   
     return (
         <>
-            <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">Хэвэлмэл картын зургыг оруулна уу.</div>
+            <div className="w-80 mb-4 border border-blue-600 p-2 rounded text-blue-600">Хэвэлмэл картын зургыг оруулна уу.</div>
             <Form.Item
                 label="Картын зураг"
                 name="redeemPhoto"
@@ -211,7 +265,7 @@ import { UploadOutlined } from '@ant-design/icons';
                     <Radio value="0">Үгүй</Radio>
                 </Radio.Group>
             </Form.Item>
-            <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">{props.state == true ? 'Иргэний үнэмлэхний зураг оруулна уу!' : 'Эцэг эхийн иргэний үнэмлэх!'}</div>
+            <div className="w-80 mb-4 border border-blue-600 p-2 rounded text-blue-600">{props.state == true ? 'Иргэний үнэмлэхний зураг оруулна уу!' : 'Эцэг эхийн иргэний үнэмлэх!'}</div>
             <Form.Item
                 label="Урд тал"
                 name="idFront"

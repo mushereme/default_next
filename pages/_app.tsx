@@ -32,8 +32,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <img src='https://res.cloudinary.com/daliec2ib/image/upload/v1657370030/BKO/236309417_128750226130749_2479255844028366833_n_w3o7d8.png' width="50px" height="auto"/>
               </div>
               <div>
-                <div>© 2022 Stockpile, Inc.</div>
-                <div>Palo Alto, California</div>
+                <div>Phone: (976) 9920-3430</div>
+                <div>Email : info@bkocapital.mn</div>
               </div>  
             </div>
           </div>

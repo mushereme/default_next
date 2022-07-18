@@ -47,10 +47,13 @@ export const RegistrationForm = (props) => {
   } 
 
   return (
-    <div className="bg-white container mx-auto py-8 px-24 -mt-12 rounded-xl">
+    <div className="bg-white container mx-auto py-8 px-4 -mt-12 rounded-xl" style={{
+
+      maxWidth: "811px"
+    }}>
       <div className="text-indigo-800 text-xl">МЭДЭЭЛЭЛ ОРУУЛАХ</div>
       <div className="text-gray text-sm">Та үнэт цаасны данс нээлгэхэд шаардлагатай мэдээллээ үнэн зөв оруулна уу. Та өөрийн Регистрийн дугаарыг зөвхөн кириллээр бичиж оруулаарай.</div>
-      <div className="my-8 mx-auto px-8">
+      <div className="my-8 mx-auto">
         <Form
           form={form}
           name="checkRedeem"
@@ -60,10 +63,11 @@ export const RegistrationForm = (props) => {
           }}
           onFinish={props?.onFinish}
           onValuesChange={onFieldChange}
-          labelCol={{ span: 4 }}
-          wrapperCol={{ span: 16 }}
+          // labelCol={{ span: 4 }}
+          // wrapperCol={{ span: 16 }}
           scrollToFirstError={true}
           onFinishFailed={onFinishFailed}
+          
           >
             <Steps progressDot current={current}>
               {steps.map((item, index) => (

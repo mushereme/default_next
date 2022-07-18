@@ -29,14 +29,17 @@ export const RedeemStore = (props) => {
   
   const checkRedeem = async (value) => {
     // console.log("==CHECK", value);
+    let val = '';
 
-    setState({ ...state, error: null, success: null})
+    value.serialNumber.split('-').map((item) => val += item);
+    
+    // console.log("==TEMP: ", val);
 
     await loadApi({
       method: "post",
       url: "/redeem/check",
       parameters: {
-        serialNumber: value.serialNumber
+        serialNumber: val
       }
     }).then((resp) => {
       setState({
