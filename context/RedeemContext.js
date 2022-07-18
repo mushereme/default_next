@@ -29,6 +29,7 @@ export const RedeemStore = (props) => {
   
   const checkRedeem = async (value) => {
     // console.log("==CHECK", value);
+    setState({ ...state, error: false, success: false})
     let val = '';
 
     value.serialNumber.split('-').map((item) => val += item);
