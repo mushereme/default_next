@@ -67,7 +67,66 @@ const banks = [
   //  #       #     #       #    #    #     # #     # #       #   #   
   //  #     # #     # #     #    #    #     # #     # #       #    #  
   //   #####   #####   #####     #    ####### #     # ####### #     # 
-                                                                  
+                                                
+  export const ExistedCustomerInformation = () => {
+    
+    return (
+        <div>
+            <Form.Item
+                name="id"
+                hidden
+            >
+                <Input required readOnly />
+            </Form.Item>
+            <Form.Item
+            name="redeemId"
+            hidden
+            >
+                <Input required readOnly />
+            </Form.Item>
+            <Form.Item
+                label="Регисртийн дугаар"
+                name="registerNumber"
+                rules={[{
+                    required: true, 
+                    message: "Регисртийн дугаар талбарыг бөглөнө үү."
+                },
+                {
+                    pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
+                    message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
+                }
+                ]}
+                normalize={value => (value || '').toUpperCase()} 
+                >
+                <Input maxLength="10"/>
+            </Form.Item>   
+            <Form.Item
+                label="Овог"
+                name="lastName"
+                rules={[{
+                required: true, 
+                message: "Овог талбарыг бөглөнө үү."
+                }]}
+                >
+                <Input />
+            </Form.Item>  
+            <Form.Item
+                label="Нэр"
+                name="firstName"
+                rules={[{
+                required: true, 
+                message: "Овог талбарыг бөглөнө үү."
+                }]}
+                >
+                <Input />
+            </Form.Item> 
+            <Button type="primary" htmlType="submit">
+                Илгээх
+            </Button>
+        </div>
+    )
+  }
+
   export const PersonalInformation = () => {
   
       

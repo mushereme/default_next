@@ -12,7 +12,7 @@ export default function RegistrationPage() {
 
   const router = useRouter()
   const context = useContext(RedeemContext);
-  const { state, createRegistration } = context;
+  const { state, createRegistration, checkRegistration } = context;
 
   useEffect(() => {
     checkRedeemStatus();
@@ -35,7 +35,7 @@ export default function RegistrationPage() {
         /> */}
       </Head>
       <RegistrationHeader />
-      <RegistrationForm state={state.redeem} onFinish={createRegistration}/>
+      <RegistrationForm state={state} onFinish={createRegistration} onCheck={checkRegistration} />
       {/* <MiddleMenu /> */}
       <BkoTerms />
     </div>

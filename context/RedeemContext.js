@@ -3,6 +3,7 @@ import { loadApi } from "../utils/axios/main";
 
 import { message } from "antd";
 import { useRouter } from 'next/router'
+import { ppid } from "process";
 
 const RedeemContext = createContext();
 
@@ -13,6 +14,7 @@ export const RedeemStore = (props) => {
     error: false,
     success: false,
     redeem: {},
+    customer: {},
     isActivated: false
   }
   
@@ -57,14 +59,40 @@ export const RedeemStore = (props) => {
     });
   };
 
-  const createRegistration = async (value) => {
+  const checkRegistration = async (value) => {
 
-    // console.log("==REG", value);
+    console.log("CHECK: ", value);
+    setState({ ...state, error: false, success: false})
+
+    await loadApi({
+      method: "get",
+      url: "/customer",
+      query: "registerNumber:" + value.registerNumber,
+      parameters: {
+        // registerNumber: value
+      }
+    }).then((resp) => {
+      console.log("CUSTOMER RESPONSE: ", resp);
+      setState({
+        ...state,
+        customer: resp[0],
+      });
+    }).catch((err) => {
+      // console.log("ERR: ", err);
+      setState({
+        ...state,
+        error: err.message
+      });
+    });
+
+  };
+
+  const createRegistration = async (value) => {
 
     setState({ ...state, error: false, success: false})
 
     await loadApi({
-      method: "post",
+      method: !value?.id ? "post" : "put",
       url: "/customer",
       parameters: {
         ...value,
@@ -94,7 +122,7 @@ export const RedeemStore = (props) => {
         error: err.message
       });
     });
-  }
+  };
     
   const checkRedeemStatus = () => {
     console.log("STATE: ", state.redeem);
@@ -141,6 +169,7 @@ export const RedeemStore = (props) => {
         state,
         checkRedeem,
         createRegistration,
+        checkRegistration,
         checkRedeemStatus
       }}
     >

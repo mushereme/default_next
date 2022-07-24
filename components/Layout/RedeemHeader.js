@@ -1,23 +1,24 @@
-
 import React from "react";
+
+import Slider from "react-slick";
 
 export const RedeemHeader = (props) => {
 
+  console.log(props.data)
+  console.log(props.data.length)
+
   return (
     <div
-      className=""
       style={{
+        minHeight: '544px',
         backgroundColor: "#41469a",
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundImage: `url('https://res.cloudinary.com/daliec2ib/image/upload/v1657362332/BKO/companies-941bedb65acb8d38c61818f91f55c5dd8350bd5fe4f17861de381a71298f166e_fr5ncl.png')`
+        backgroundImage: `url(${props?.data[props.data.length - 1]?.imageUrl})`  
       }}
     >
-      <div className="container mx-auto py-auto" style={{minHeight: '544px'}}>
-        <div 
-          className="bko-panel"
-          
-        >
+      <div className="container mx-auto py-auto"> 
+        <div className="bko-panel">
           <div
             className="bko-floater"
             style={{
