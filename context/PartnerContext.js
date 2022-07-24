@@ -35,7 +35,7 @@ export const PartnerStore = (props) => {
     await loadApi({
       method: "get",
       url: "/partner",
-      query: 'isActive:1&isDeleted:0',
+      query: 'isActive:1',
       parameters: {}
     }).then((resp) => {
       setState({

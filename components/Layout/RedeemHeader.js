@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 export const RedeemHeader = (props) => {
 
-  console.log(props.data)
+  console.log("BANNER LIST: ", props.data)
   console.log(props.data.length)
 
   return (
@@ -14,6 +14,7 @@ export const RedeemHeader = (props) => {
         backgroundColor: "#41469a",
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
+        backgroundSize: "contain",
         backgroundImage: `url(${props?.data[props.data.length - 1]?.imageUrl})`  
       }}
     >

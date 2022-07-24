@@ -27,13 +27,13 @@ export const BannerStore = (props) => {
   }, [state.success, state.error]);
   
   const getBanners = async () => {
-    // console.log("==CHECK", value);
+    console.log("==CHECK");
     setState({ ...state, error: false, success: false})
     
     await loadApi({
       method: "get",
       url: "/banner",
-      query: 'isActive:1&isDeleted:0',
+      query: 'isActive:1',
       parameters: {}
     }).then((resp) => {
       setState({

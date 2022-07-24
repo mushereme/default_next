@@ -10,12 +10,12 @@ const RedeemContext = createContext();
 export const RedeemStore = (props) => {
 
   const initialState = {
-    loading: false,
-    error: false,
-    success: false,
+    loading: null,
+    error: null,
+    success: null,
     redeem: {},
     customer: {},
-    isActivated: false
+    isActivated: null
   }
   
   const router = useRouter();
@@ -61,20 +61,18 @@ export const RedeemStore = (props) => {
 
   const checkRegistration = async (value) => {
 
-    console.log("CHECK: ", value);
-    setState({ ...state, error: false, success: false})
+    setState({ ...state, success: null})
 
     await loadApi({
       method: "get",
       url: "/customer",
       query: "registerNumber:" + value.registerNumber,
-      parameters: {
-        // registerNumber: value
-      }
+      parameters: {}
     }).then((resp) => {
-      console.log("CUSTOMER RESPONSE: ", resp);
+      // console.log("CUSTOMER RESPONSE: ", resp);
       setState({
         ...state,
+        success: null,
         customer: resp[0],
       });
     }).catch((err) => {
@@ -151,7 +149,7 @@ export const RedeemStore = (props) => {
 
     setState({
       ...state,
-      success: false
+      success: null
     })
   }
 
