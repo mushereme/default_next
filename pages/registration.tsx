@@ -19,7 +19,7 @@ export default function RegistrationPage() {
   }, []);
 
   const checkRedeemStatus = () => {
-    console.log("REDEEM: ", state.redeem);
+    // console.log("REDEEM: ", state.redeem);
     if(!state.redeem.id) {
       router.push("/");
     }
