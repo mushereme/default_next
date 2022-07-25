@@ -19,7 +19,8 @@ export const RedeemForm = (props) => {
           className="mx-auto"
           style={{
             margin: 'auto',
-            maxWidth: "134px"
+            maxWidth: "140px",
+            minWidth: "140px"
           }}
           >
           <Form.Item
