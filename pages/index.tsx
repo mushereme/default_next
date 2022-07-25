@@ -40,8 +40,8 @@ export default function RedeemPage() {
         <RedeemForm onFinish={checkRedeem} />
       </RedeemHeader>
       <BkoCard />
-      <BkoTerms />
       <BkoGrid data={partnerContext.state.list}/> 
+      <BkoTerms />
     </div>
   )
 }

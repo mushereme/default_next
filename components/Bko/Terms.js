@@ -5,7 +5,7 @@ export const BkoTerms = () => {
 
   return (
     <div className="container mx-auto ">
-      <div className="my-12 mx-4 border-2 rounded-xl p-4 border-violet-400">
+      <div className="my-12 mx-4">
         <p className="italic text-lg">Санамж.</p>
         <div className="text-gray-600 text-sm" style={{lineHeight: '19px'}}> 
           <div>
