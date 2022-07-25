@@ -11,7 +11,7 @@ export const RedeemHeader = (props) => {
     <div
       style={{
         minHeight: '544px',
-        backgroundColor: "#41469a",
+        // backgroundColor: "#41469a",
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: "contain",
