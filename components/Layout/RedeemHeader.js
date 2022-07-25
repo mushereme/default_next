@@ -14,7 +14,7 @@ export const RedeemHeader = (props) => {
         // backgroundColor: "#41469a",
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundImage: `url(${props?.data[props.data.length - 1]?.imageUrl})`  
       }}
     >

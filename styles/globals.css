@@ -2049,7 +2049,7 @@ html {
 
 .bko-panel {
     position: relative;
-    max-width: 811px;
+    max-width: 500px;
     margin: auto;
     display: -webkit-box;
     display: -webkit-flex;
@@ -2069,16 +2069,16 @@ html {
 .bko-floater {
   position: absolute;
   z-index: 2;
-  top: 130px;
-  left: 170px; 
+  top: 170px;
+  left: 0px; 
   box-shadow: 0 17px 40px 0 rgb(61 56 130 / 54%);
   /* background-image: url(); */
   background-size: cover; 
   background-repeat: no-repeat;
   /*background-position: top; */
-  object-fit: cover;
-  max-width: 800px;
-  width: 100%;
+  object-fit: contain;
+  max-width: 500px;
+  width: auto;
   border-radius: 16px;
   margin: auto; 
   padding: 0px 40px 24px 40px;
