@@ -9,7 +9,7 @@ const BkoLogo = () => {
         className="flex items-center justify-start w-auto"
       >
         <div
-          className="w-10 h-10 mr-3"
+          className="md:w-10 md:h-10 w-6 h-6 mr-3"
           style={{
             backgroundSize: "contain",
             backgroundPosition: "center",
@@ -19,7 +19,7 @@ const BkoLogo = () => {
 
         </div>
         <div
-          className="text-base md:text-3xl"
+          className="text-base md:text-3xl text-sm"
           style={{
             fontStyle: "normal",
             fontWeight: 400,
@@ -42,7 +42,7 @@ const BkoLogo = () => {
         className="flex items-center justify-start w-auto -mt-4"
       >
         <div
-          className="w-10 h-10 mr-3"
+          className="md:w-10 md:h-10 w-6 h-6 mr-3"
           style={{
             backgroundSize: "contain",
             backgroundPosition: "center",
@@ -52,7 +52,7 @@ const BkoLogo = () => {
 
         </div>
         <div
-          className="text-base md:text-3xl"
+          className="text-base md:text-3xl text-sm"
           style={{
             fontStyle: "normal",
             fontWeight: 400,

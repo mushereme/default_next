@@ -8,7 +8,7 @@ const BkoLogo = () => {
       <div className="mr-2">
         <a href="https://www.facebook.com/bkocapital" target="_blank" className="">
           <div
-            className="h-12 w-12"
+            className="md:h-12 md:w-12 h-8 w-8"
             style={{
               backgroundSize:"contain",
               backgroundPosition: "center",
@@ -30,7 +30,7 @@ const BkoLogo = () => {
       <div className="ml-2 font-bold">
         <a href="https://www.facebook.com/bkocapital"  target="_blank">
           <div
-            className="h-12 w-12"
+            className="md:h-12 md:w-12 h-8 w-8"
             style={{
               backgroundSize:"contain",
               backgroundPosition: "center",
