@@ -6,7 +6,7 @@ const BkoGrid = (props) => {
 
   const { data } = props;
 
-  console.log("=== GRID DATA: ", data)
+  // console.log("=== GRID DATA: ", data)
 
   return (
     <div className="bg-white">

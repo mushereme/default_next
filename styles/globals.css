@@ -2129,3 +2129,23 @@ html {
         
   color: #5BA8FF;
 }
+
+.bko-border .ant-steps-vertical.ant-steps-dot .ant-steps-item-content {
+  width: 100% !important;
+  text-align: center;
+  color: #DDAC6D;
+  font-weight: bold;
+
+}
+
+.bko-border .ant-steps-item-title {
+  color: #DDAC6D;        
+}
+
+.bko-border .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title {
+  color: #DDAC6D;               
+}
+
+.bko-border .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
+ background: none;
+}

@@ -72,68 +72,74 @@ const banks = [
   export const ExistedCustomerInformation = () => {
     
     return (
-        <div className="grid grid-cols-4 gap-12">
-            <div className="md:col-span-2 col-span-4">
-                <Form.Item
-                    name="registerNumber"
-                    rules={[{
+        <div className="">
+                
+            <div className="grid grid-cols-4 gap-x-12">
+                <div className="md:col-span-2 col-span-4">
+                    <Form.Item
+                        name="registerNumber"
+                        rules={[{
+                            required: true, 
+                            message: "Регисртийн дугаар талбарыг бөглөнө үү."
+                        },
+                        {
+                            pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
+                            message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
+                        }
+                        ]}
+                        normalize={value => (value || '').toUpperCase()} 
+                    >
+                        <Input maxLength="10" placeholder="Регисртийн дугаар"/>
+                    </Form.Item>   
+                    <Form.Item
+                    
+                        name="lastName"
+                        rules={[{
                         required: true, 
-                        message: "Регисртийн дугаар талбарыг бөглөнө үү."
-                    },
-                    {
-                        pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
-                        message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
-                    }
-                    ]}
-                    normalize={value => (value || '').toUpperCase()} 
-                >
-                    <Input maxLength="10" placeholder="Регисртийн дугаар"/>
-                </Form.Item>   
-                <Form.Item
-                 
-                    name="lastName"
-                    rules={[{
-                    required: true, 
-                    message: "Овог талбарыг бөглөнө үү."
-                    }]}
+                        message: "Овог талбарыг бөглөнө үү."
+                        }]}
+                        >
+                        <Input placeholder="Овог"/>
+                    </Form.Item>  
+                    <Form.Item
+                    
+                        name="firstName"
+                        rules={[{
+                        required: true, 
+                        message: "Овог талбарыг бөглөнө үү."
+                        }]}
+                        >
+                        <Input placeholder="Нэр"/>
+                    </Form.Item> 
+                </div>
+                <div className="md:col-span-2 col-span-4">
+                    <Form.Item
+                        name="id"
+                        hidden
                     >
-                    <Input placeholder="Овог"/>
-                </Form.Item>  
-                <Form.Item
-                   
-                    name="firstName"
-                    rules={[{
-                    required: true, 
-                    message: "Овог талбарыг бөглөнө үү."
-                    }]}
-                    >
-                    <Input placeholder="Нэр"/>
-                </Form.Item> 
-            </div>
-            <div className="md:col-span-2 col-span-4">
-                <Form.Item
-                    name="id"
+                        <Input required readOnly />
+                    </Form.Item>
+                    <Form.Item
+                    name="redeemId"
                     hidden
+                    >
+                        <Input required readOnly />
+                    </Form.Item>
+                </div>
+                <div 
+                    className="mx-auto col-span-4  md:w-96 w-64"
+                    style={{
+                        maxWidth: "448px",
+                        // width: "250px",
+                        minWidth: "120px"
+                    }}
                 >
-                    <Input required readOnly />
-                </Form.Item>
-                <Form.Item
-                name="redeemId"
-                hidden
-                >
-                    <Input required readOnly />
-                </Form.Item>
+                    <Button block size="large" type="primary" htmlType="submit">
+                        Илгээх
+                    </Button>
+                </div>
             </div>
-            <div 
-                className="mx-auto col-span-4 -mt-8"
-                style={{
-                    width: "448px"
-                }}
-            >
-                <Button block size="large" type="primary" htmlType="submit">
-                    Илгээх
-                </Button>
-            </div>
+            
         </div>
     )
   }
@@ -142,7 +148,7 @@ const banks = [
   
       
     return (
-        <div className="grid grid-cols-4 gap-12">
+        <div className="grid grid-cols-4 gap-x-12">
             <div className="md:col-span-2 col-span-4">
                 <Form.Item
                     name="redeemId"
@@ -223,7 +229,7 @@ const banks = [
                     <Input placeholder="Утасны дугаар"/>
                 </Form.Item>  
             </div>
-            <div className="col-span-4 -mt-12">
+            <div className="col-span-4">
                 <Form.Item
                     className="w-full"
                     label=""
@@ -326,7 +332,7 @@ const banks = [
   
     return (
         <>
-            <div className="grid grid-cols-4 gap-12">
+            <div className="grid grid-cols-4 gap-x-12">
                 <div className="md:col-span-2 col-span-4">
                     {/* <div className="w-80 mb-4 border border-blue-600 p-2 rounded text-blue-600">Хэвэлмэл картын зургыг оруулна уу.</div> */}
                     <Form.Item
@@ -363,7 +369,7 @@ const banks = [
                                     <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                 </div>
                                 <div className="col-span-4">
-                                    <Button block type="primary" ghost>Зураг оруулах</Button>
+                                    <Button block type="primary" ghost>Зураг</Button>
                                 </div>
                             </div>
 
@@ -419,7 +425,7 @@ const banks = [
                                     <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                 </div>
                                 <div className="col-span-4">
-                                    <Button block type="primary" ghost>Зураг оруулах</Button>
+                                    <Button block type="primary" ghost>Зураг</Button>
                                 </div>
                             </div>
 
@@ -458,7 +464,7 @@ const banks = [
                                     <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                 </div>
                                 <div className="col-span-4">
-                                    <Button block type="primary" ghost>Зураг оруулах</Button>
+                                    <Button block type="primary" ghost>Зураг</Button>
                                 </div>
                             </div>
 
@@ -499,7 +505,7 @@ const banks = [
                                             <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                         </div>
                                         <div className="col-span-4">
-                                            <Button block type="primary" ghost>Зураг оруулах</Button>
+                                            <Button block type="primary" ghost>Зураг</Button>
                                         </div>
                                     </div>
 
@@ -538,7 +544,7 @@ const banks = [
                                             <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                         </div>
                                         <div className="col-span-4">
-                                            <Button block type="primary" ghost>Зураг оруулах</Button>
+                                            <Button block type="primary" ghost>Зураг</Button>
                                         </div>
                                     </div>
 

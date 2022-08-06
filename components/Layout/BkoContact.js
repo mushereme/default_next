@@ -19,10 +19,11 @@ const BkoLogo = () => {
 
         </div>
         <div
+          className="text-base md:text-3xl"
           style={{
             fontStyle: "normal",
             fontWeight: 400,
-            fontSize: "28px",
+            // fontSize: "28px",
             lineHeight: "54px",
             /* or 193% */
 
@@ -32,7 +33,7 @@ const BkoLogo = () => {
             /* Primary/❖ 400 */
             color: "#5BA8FF"
 
-          }}      
+          }}     
         >
           Phone: (976) 9920-3430
         </div>
@@ -51,10 +52,11 @@ const BkoLogo = () => {
 
         </div>
         <div
+          className="text-base md:text-3xl"
           style={{
             fontStyle: "normal",
             fontWeight: 400,
-            fontSize: "28px",
+            // fontSize: "28px",
             lineHeight: "54px",
             /* or 193% */
 

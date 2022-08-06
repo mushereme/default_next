@@ -7,7 +7,8 @@ import PartnerContext from '../context/PartnerContext';
 
 import { RedeemHeader } from "../components/Layout/RedeemHeader";
 import { BkoTerms } from "../components/Bko/Terms";
-import { RedeemForm } from "../components/Bko/RedeemForm";
+// import { RedeemForm } from "../components/Bko/RedeemForm";
+import RedeemForm from "../components/Bko/RedeemFormNew";
 import BkoGrid from "../components/Layout/BkoGrid";
 
 export default function RedeemPage() {
@@ -36,6 +37,7 @@ export default function RedeemPage() {
         /> */}
       </Head>
       <RedeemHeader data={bannerContext.state.list}>
+        {/* <RedeemForm onFinish={checkRedeem} /> */}
         <RedeemForm onFinish={checkRedeem} />
       </RedeemHeader>
       <BkoGrid data={partnerContext.state.list}/> 

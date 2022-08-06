@@ -7,10 +7,12 @@ import {
   
     return (
       <div 
-        className="steps-action mx-auto" 
-        style={{
-          width: "448px"
-        }}
+        className="steps-action mx-auto md:w-96 w-64" 
+        // style={{
+        //   maxWidth: "448px",
+        //   width: "440px",
+        //   minWidth: "120px"
+        // }}
       >
         {props.current < props.steps - 1 && (
           <Button block size="large" type="primary"  onClick={() => props.changeStep(props.current + 1)}>

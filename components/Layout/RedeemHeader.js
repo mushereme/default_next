@@ -4,8 +4,8 @@ import BkoCard from "./BkoCard";
 
 export const RedeemHeader = (props) => {
 
-  console.log("BANNER LIST: ", props.data)
-  console.log(props.data.length)
+  // console.log("BANNER LIST: ", props.data)
+  // console.log(props.data.length)
 
   return (
     <div className="container mx-auto">
@@ -17,7 +17,7 @@ export const RedeemHeader = (props) => {
               maxWidth: "700px"
             }}
           >
-            <div className="md:mt-12 mt-6 mx-8">
+            <div className="md:mt-12 mt-6 md:mx-8 mx-2">
               <div className="mx-auto text-center">
                 <div
                   className="md:h-36 h-24"
@@ -48,11 +48,12 @@ export const RedeemHeader = (props) => {
                   className=""
                 >
                   <div 
+                    className="md:text-lg text-base"
                     style={{
                       // fontFamily: 'Rubik',
                       fontStyle: "normal",
                       fontWeight: 600,
-                      fontSize: "28px",
+                      // fontSize: "28px",
                       lineHeight: "32px",
                       /* or 114% */
                       display: "flex",
@@ -66,11 +67,11 @@ export const RedeemHeader = (props) => {
                     ТАНЫ БКО БЭЛГИЙН КАРТЫГ ХҮЛЭЭЖ БАЙНА
                   </div>
                   <div
-                    className="text-center md:mt-12 mt-6 md:mb-14 mb-7" 
+                    className="text-center md:mt-12 mt-6 md:mb-14 mb-7 md:text-base text-sm" 
                     style={{
                       fontStyle: "normal",
                       fontWeight: 400,
-                      fontSize: "18px",
+                      // fontSize: "18px",
                       lineHeight: "24px",
                       color: "#DDAC6D"
                     }}

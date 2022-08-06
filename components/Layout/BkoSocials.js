@@ -34,7 +34,7 @@ const BkoLogo = () => {
             style={{
               backgroundSize:"contain",
               backgroundPosition: "center",
-              backgroundImage: "url(https://res.cloudinary.com/daliec2ib/image/upload/v1659778438/BKO/assets/Phone_1_bqwhrv.png)"
+              backgroundImage: "url(https://res.cloudinary.com/daliec2ib/image/upload/v1659776827/BKO/assets/instagram_zh2izh.png)"
             }}
           >
           </div>
