@@ -8,7 +8,6 @@ import PartnerContext from '../context/PartnerContext';
 import { RedeemHeader } from "../components/Layout/RedeemHeader";
 import { BkoTerms } from "../components/Bko/Terms";
 import { RedeemForm } from "../components/Bko/RedeemForm";
-import BkoCard from "../components/Layout/BkoCard";
 import BkoGrid from "../components/Layout/BkoGrid";
 
 export default function RedeemPage() {
@@ -24,8 +23,8 @@ export default function RedeemPage() {
     partnerContext.getPartners();
   }, []);
 
-  console.log("BANNER: ", bannerContext.state)
-  console.log("PARTNER: ", partnerContext.state)
+  // console.log("BANNER: ", bannerContext.state)
+  // console.log("PARTNER: ", partnerContext.state)
 
   return (
     <div>
@@ -39,7 +38,6 @@ export default function RedeemPage() {
       <RedeemHeader data={bannerContext.state.list}>
         <RedeemForm onFinish={checkRedeem} />
       </RedeemHeader>
-      <BkoCard />
       <BkoGrid data={partnerContext.state.list}/> 
       <BkoTerms />
     </div>

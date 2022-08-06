@@ -17,9 +17,15 @@ const Card02 = (props) => {
         }}  
       >
       </div>      
-      <div className="mt-4 w-48 mx-auto text-lg font-normal font-sans text-indigo-900 tracking-tight leading-6">
-        <div dangerouslySetInnerHTML={{__html: title}} />
-      </div>  
+      <span
+        className="mt-4 w-48 mx-auto text-base font-normal font-sans text-indigo-900 tracking-tight leading-6" 
+        style={{
+          textAlign: "center",
+          color: "#DDAC6D"
+        }}
+      >
+        {title}
+      </span>  
     </div>
   );
 };

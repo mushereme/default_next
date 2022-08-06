@@ -30,11 +30,11 @@ export const RedeemStore = (props) => {
 
   
   const checkRedeem = async (value) => {
-    // console.log("==CHECK", value);
+    console.log("==CHECK", value);
     setState({ ...state, error: false, success: false})
     let val = '';
 
-    value.serialNumber.split('-').map((item) => val += item);
+    // value.serialNumber.split('-').map((item) => val += item);
     
     // console.log("==TEMP: ", val);
 
@@ -42,7 +42,7 @@ export const RedeemStore = (props) => {
       method: "post",
       url: "/redeem/check",
       parameters: {
-        serialNumber: val
+        serialNumber: value.serialNumber
       }
     }).then((resp) => {
       setState({

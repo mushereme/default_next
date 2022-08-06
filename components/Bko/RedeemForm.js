@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Input } from "antd"
-import { MaskedInput } from "antd-mask-input";
 
+import MultipleInput from "../Atom/MultiInput/main";
+import OTPInput from "../Atom/OTPInput/main";
+
+import { MaskedInput } from "antd-mask-input";
+import RICIBs from 'react-individual-character-input-boxes';
 
 export const RedeemForm = (props) => {
 
   const [form] = Form.useForm();
 
+  
+  const [input, setInput] = useState('')
+
+  const handleChange = (value) => {
+    setInput(value);
+    // form.setFieldValue('serialNumber', value); 
+  }
+
+  const onFinish = (value) => {
+    console.log("BALUE: ", value);
+    props.onFinish({serialNumber: input})
+  }
+
   return (
     <div>
-      <div className="text-center text-indigo-800 text-3xl mt-16">ТАНЫ БКО БЭЛГИЙН КАРТЫГ ХҮЛЭЭЖ БАЙНА</div>
-      <div className="text-center text-gray-500 text-xl mt-4">Та өөрийн картын дугаарыг оруулна уу</div>
-      <div className="my-8 mx-auto">
+      <div className="mx-auto text-center">
         <Form
           form={form}
           name="checkRedeem"
-          onFinish={props.onFinish}
+          // onFinish={props.onFinish}
           className="mx-auto"
+          onChange={() => {
+            // form.setFieldValue('serialNumber', input);
+          }}
           style={{
             margin: 'auto',
-            maxWidth: "150px",
+            // maxWidth: "150px",
             minWidth: "150px"
           }}
           >
@@ -31,17 +49,26 @@ export const RedeemForm = (props) => {
             }]}
             
             >
-              <MaskedInput mask={'0000-0000-0000'} />
-            {/* <Input placeholder="XXXX-XXXX-XXXX" maxLength={12} size="large" /> */}
+              <div className="multiple-inputs mx-auto">
+                <OTPInput 
+                  value={input}
+                  onChange={handleChange}
+                  numInputs={12}
+                  separator={'-'}
+                />
+              </div>
           </Form.Item>
-          <Form.Item className="text-center ">
-            <Button
-              type="primary"
-              htmlType="submit"
-            > 
-              Код илгээх
-            </Button>
-          </Form.Item>
+          <div className="text-center mx-6">
+              <Button
+                onClick={onFinish}
+                block
+                size="large"
+                type="primary"
+                htmlType="submit"
+              > 
+                Код илгээх
+              </Button>
+          </div>
         </Form>
 
       </div>

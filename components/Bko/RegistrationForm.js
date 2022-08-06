@@ -26,7 +26,7 @@ export const RegistrationForm = (props) => {
     },
     {
       title: 'Бичиг баримт',
-      content: <SupportingDocuments form={form} state={hide}/>,
+      content: <SupportingDocuments form={form} Form={Form} state={hide}/>,
     }
   ]
   
@@ -54,7 +54,7 @@ export const RegistrationForm = (props) => {
   }
 
   const onFinishFailed = (value) => {
-    // console.log("VALUES:", value);
+    console.log("VALUES:", value);
 
     value.errorFields.map((item) => {
       message.error(item.errors)
@@ -63,16 +63,14 @@ export const RegistrationForm = (props) => {
 
   return (
     <div 
-      className="bg-white container mx-auto py-8 px-4 -mt-12 rounded-xl" style={{
-      maxWidth: "811px"
+      className="bg-white container mx-auto py-8 px-4 mt-12 rounded-xl shadow-2xl" style={{
+      // maxWidth: "811px"
     }}>
-      <div className="text-indigo-800 text-xl">МЭДЭЭЛЭЛ ОРУУЛАХ</div>
-      <div className="text-gray text-sm">Та үнэт цаасны данс нээлгэхэд шаардлагатай мэдээллээ үнэн зөв оруулна уу. Та өөрийн Регистрийн дугаарыг зөвхөн кириллээр бичиж оруулаарай.</div>
-      <div className="my-8 mx-auto">
+      <div className="my-8 mx-auto bko-border">
         <Form
           form={form}
           name="checkRedeem"
-          layout="vertical"
+          layout="horizontal"
           initialValues={{
             redeemId: props?.state?.redeem?.id,
             registerNumber: register,
@@ -87,15 +85,45 @@ export const RegistrationForm = (props) => {
           
         > 
           {!props?.state?.customer && (
-            <Steps progressDot current={current}>
+            <Steps type="navigation" progressDot current={current}>
               {steps.map((item, index) => (
-                <Steps.Step key={index} title={item.title} />
+                <Steps.Step status={index > current - 1} key={index} title={item.title} />
               ))}
             </Steps>
           )}
           
-          
-          <div className="steps-content my-16">
+          <div className="text-center ">
+            <div 
+              className="mt-12 uppercase"
+              style={{
+                fontStyle: 'normal',
+                fontWeight: 600,
+                fontSize: "28px",
+                lineHeight: "32px",
+                color: '#5BA8FF'
+                /* identical to box height, or 114% */
+              }}
+            >
+              Та үнэт цаасны данс нээлгэхэд шаардлагатай мэдээллээ үнэн зөв оруулна уу.
+            </div>
+            <div 
+              className="mt-4 text-lg"
+              style={{
+                fontWeight: 500,
+                color: '#DDAC6D',
+                lineHeight: "24px"
+              }}
+            >
+              Та өөрийн Регистрийн дугаарыг зөвхөн кириллээр бичиж оруулаарай.
+            </div>
+          </div>
+      
+          <div 
+            className="steps-content mt-12 mx-auto"
+            style={{
+              maxWidth: '946px'
+            }}
+          >
             {!props?.state?.customer 
               ? steps.map((step, index) => (
                 <div key={index} className={`${index === current ? 'relative' : 'hidden'}`}>

@@ -42,7 +42,9 @@ input::-ms-reveal {
           box-sizing: border-box;
 }
 html {
-  font-family: sans-serif;
+        
+  font-family: 'Rubik', sans-serif !important;
+  /* font-family: sans-serif; */
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -56,7 +58,8 @@ body {
   margin: 0;
   color: rgba(0, 0, 0, 0.85);
   font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: 'Rubik', sans-serif !important;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
   font-variant: tabular-nums;
   line-height: 1.5715;
   background-color: #fff;
@@ -186,7 +189,9 @@ code,
 kbd,
 samp {
   font-size: 1em;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  
+  font-family: 'Rubik', sans-serif;
+  /* font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; */
 }
 pre {
   margin-top: 0;
@@ -2087,4 +2092,40 @@ html {
 
 .ant-menu-horizontal {
   border: none !important;
+}
+
+.no-margin-button .no-margin-button { 
+  margin-bottom: 0 !important;
+}
+
+.bko-border .ant-input {
+  border: 2px solid #5BA8FF;
+  border-radius: 8px;
+  height: 56px;
+  font-weight: 700;
+  color: #5BA8FF;
+}
+
+.bko-border .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: 2px solid #5BA8FF;
+  border-radius: 8px;
+  height: 56px;
+  font-weight: 700;
+  color: #5BA8FF;
+}
+
+.bko-border .ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+        
+  font-weight: 700;
+  padding-top: 12px !important; 
+}
+
+.bko-border .ant-form-item-label > label {
+        
+  color: #5BA8FF;
+}
+
+.bko-border .ant-radio-wrapper {
+        
+  color: #5BA8FF;
 }

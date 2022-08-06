@@ -7,7 +7,7 @@ const Card01 = (props) => {
   const { url, title, img, key } = props;
 
   return (
-    <div className="p-4 m-4 text-center" key={key}>
+    <div className="p-4 mx-4 text-center" key={key}>
       <Tooltip title={title}>
         <span>
           <a href={url}>

@@ -5,9 +5,37 @@ export const BkoTerms = () => {
 
   return (
     <div className="container mx-auto ">
-      <div className="my-12 mx-4">
-        <p className="italic text-lg">Санамж.</p>
-        <div className="text-gray-600 text-sm" style={{lineHeight: '19px'}}> 
+      <div 
+        className="my-12 mx-4"
+      >
+        <p 
+          className="italic text-lg"
+          style={{
+            fontStyle: "normal",
+            fontWeight: 400,
+            fontSize: "28px",
+            lineHeight: "24px",
+            /* or 86% */
+            alignItems: "center",
+            /* Primary/❖ 400 */
+            color: "#5BA8FF"
+          }}
+        >
+          Санамж.
+        </p>
+        <div 
+          className="text-gray-600 text-sm" 
+          style={{
+            fontStyle: "normal",
+            fontWeight: 400,
+            // fontSize: "28px",
+            lineHeight: "24px",
+            /* or 86% */
+            alignItems: "center",
+            /* Primary/❖ 400 */
+            color: "#5BA8FF"
+          }}
+          > 
           <div>
             <div>
               <b>Идэвхижүүлэлт: </b> Бэлгийн картыг идэвхижүүлэн хөрөнгө оруулагч болохын тулд БКО Капитал ҮЦК үнэт цаасны дансаа нээлгэнэ. 18 нас хүрээгүй хүүхэд үнэт цаасны данс нээлгэхдээ эцэг эхийн аль нэгийн бичиг баримттайгаар нээлгэх шаардлагатай. Картыг буцаах боломжгүй.

@@ -10,8 +10,20 @@ const BkoGrid = (props) => {
 
   return (
     <div className="bg-white">
-      <div className="container mx-auto">
-        <div className=" mx-12">
+      <div className="container mx-auto text-center">
+        <div 
+          className="uppercase pt-2"
+          style={{
+            color: "#5BA8FF",
+            fontStyle: "normal",
+            fontWeight: 700,
+            fontSize: "34px",
+            lineHeight: "54px"
+          }}
+        >
+          Хамтрагч байгууллагууд
+        </div>
+        <div className="mx-12">
           <div className={`grid md:grid-cols-4 sm:grid-cols-2`}>
             {data.map((item, index) => {
               return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
     Button,
@@ -11,7 +11,8 @@ import {
   } from "antd";
   
 import { UploadOutlined } from '@ant-design/icons';
-   
+
+import Dragger from "../Atom/Dragger";
 
 
 
@@ -71,58 +72,68 @@ const banks = [
   export const ExistedCustomerInformation = () => {
     
     return (
-        <div>
-            <Form.Item
-                name="id"
-                hidden
-            >
-                <Input required readOnly />
-            </Form.Item>
-            <Form.Item
-            name="redeemId"
-            hidden
-            >
-                <Input required readOnly />
-            </Form.Item>
-            <Form.Item
-                label="Регисртийн дугаар"
-                name="registerNumber"
-                rules={[{
+        <div className="grid grid-cols-4 gap-12">
+            <div className="md:col-span-2 col-span-4">
+                <Form.Item
+                    name="registerNumber"
+                    rules={[{
+                        required: true, 
+                        message: "Регисртийн дугаар талбарыг бөглөнө үү."
+                    },
+                    {
+                        pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
+                        message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
+                    }
+                    ]}
+                    normalize={value => (value || '').toUpperCase()} 
+                >
+                    <Input maxLength="10" placeholder="Регисртийн дугаар"/>
+                </Form.Item>   
+                <Form.Item
+                 
+                    name="lastName"
+                    rules={[{
                     required: true, 
-                    message: "Регисртийн дугаар талбарыг бөглөнө үү."
-                },
-                {
-                    pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
-                    message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
-                }
-                ]}
-                normalize={value => (value || '').toUpperCase()} 
+                    message: "Овог талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Овог"/>
+                </Form.Item>  
+                <Form.Item
+                   
+                    name="firstName"
+                    rules={[{
+                    required: true, 
+                    message: "Овог талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Нэр"/>
+                </Form.Item> 
+            </div>
+            <div className="md:col-span-2 col-span-4">
+                <Form.Item
+                    name="id"
+                    hidden
                 >
-                <Input maxLength="10"/>
-            </Form.Item>   
-            <Form.Item
-                label="Овог"
-                name="lastName"
-                rules={[{
-                required: true, 
-                message: "Овог талбарыг бөглөнө үү."
-                }]}
+                    <Input required readOnly />
+                </Form.Item>
+                <Form.Item
+                name="redeemId"
+                hidden
                 >
-                <Input />
-            </Form.Item>  
-            <Form.Item
-                label="Нэр"
-                name="firstName"
-                rules={[{
-                required: true, 
-                message: "Овог талбарыг бөглөнө үү."
-                }]}
-                >
-                <Input />
-            </Form.Item> 
-            <Button type="primary" htmlType="submit">
-                Илгээх
-            </Button>
+                    <Input required readOnly />
+                </Form.Item>
+            </div>
+            <div 
+                className="mx-auto col-span-4 -mt-8"
+                style={{
+                    width: "448px"
+                }}
+            >
+                <Button block size="large" type="primary" htmlType="submit">
+                    Илгээх
+                </Button>
+            </div>
         </div>
     )
   }
@@ -131,95 +142,101 @@ const banks = [
   
       
     return (
-      <div>
-        <Form.Item
-            name="redeemId"
-            hidden
-        >
-            <Input required readOnly />
-        </Form.Item>
-        <Form.Item
-            label="Регисртийн дугаар"
-            name="registerNumber"
-            rules={[{
-                required: true, 
-                message: "Регисртийн дугаар талбарыг бөглөнө үү."
-            },
-            {
-                pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
-                message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
-            }
-            ]}
-            normalize={value => (value || '').toUpperCase()} 
-            >
-            <Input maxLength="10"/>
-        </Form.Item>  
-        <Form.Item
-            label="Ургийн овог"
-            name="familyName"
-            rules={[{
-            required: true, 
-            message: "Ургын овог талбарыг бөглөнө үү."
-            }]}
-            >
-            <Input />
-        </Form.Item>  
-        <Form.Item
-            label="Овог"
-            name="lastName"
-            rules={[{
-            required: true, 
-            message: "Овог талбарыг бөглөнө үү."
-            }]}
-            >
-            <Input />
-        </Form.Item>  
-        <Form.Item
-            label="Нэр"
-            name="firstName"
-            rules={[{
-            required: true, 
-            message: "Овог талбарыг бөглөнө үү."
-            }]}
-            >
-            <Input />
-        </Form.Item> 
-        <Form.Item
-            label="Гэрийн хаяг"
-            name="address"
-            rules={[{
-            required: true, 
-            message: "Гэрийн хаяг талбарыг бөглөнө үү."
-            }]}
-            >
-            <Input />
-        </Form.Item>  
-        <Form.Item
-            label="И-мэйл хаяг"
-            name="email"
-            rules={[
-                {
+        <div className="grid grid-cols-4 gap-12">
+            <div className="md:col-span-2 col-span-4">
+                <Form.Item
+                    name="redeemId"
+                    hidden
+                >
+                    <Input required readOnly />
+                </Form.Item>
+                <Form.Item
+                    name="registerNumber"
+                    rules={[{
+                        required: true, 
+                        message: "Регисртийн дугаар талбарыг бөглөнө үү."
+                    },
+                    {
+                        pattern: /[А-ЯӨҮ]{1}[А-ЯӨҮ]{1}[0-9]{8}/,
+                        message: 'Регистрийн дугаар буруу байна. Жишээ: УБ99999999',
+                    }
+                    ]}
+                    normalize={value => (value || '').toUpperCase()} 
+                    >
+                    <Input 
+                        maxLength="10" 
+                        placeholder="Регисртийн дугаар"
+                    />
+                </Form.Item>  
+                <Form.Item
+                    name="lastName"
+                    rules={[{
                     required: true, 
-                    message: "Энэ талбарыг бөглөнө үү."
-                },
-                {
-                    type: 'email',
-                    message: 'Имэйл хаяг оруулна уу.'
-                }
-            ]}
-            >
-            <Input />
-        </Form.Item>  
-        <Form.Item
-            label="Утасны дугаар"
-            name="phone"
-            rules={[{
-            required: true, 
-            message: "Утасны дугаар талбарыг бөглөнө үү."
-            }]}
-            >
-            <Input />
-        </Form.Item>  
+                    message: "Овог талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Овог" />
+                </Form.Item>  
+                <Form.Item
+                    name="firstName"
+                    rules={[{
+                    required: true, 
+                    message: "Овог талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Овог"/>
+                </Form.Item> 
+            </div>
+            <div className="md:col-span-2 col-span-4">
+                
+                <Form.Item
+                    name="familyName"
+                    rules={[{
+                    required: true, 
+                    message: "Ургын овог талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Ургийн овог"/>
+                </Form.Item>  
+                <Form.Item
+                    name="email"
+                    rules={[
+                        {
+                            required: true, 
+                            message: "Энэ талбарыг бөглөнө үү."
+                        },
+                        {
+                            type: 'email',
+                            message: 'Имэйл хаяг оруулна уу.'
+                        }
+                    ]}
+                    >
+                    <Input placeholder="И-мэйл хаяг"/>
+                </Form.Item>  
+                <Form.Item
+                    name="phone"
+                    rules={[{
+                    required: true, 
+                    message: "Утасны дугаар талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Утасны дугаар"/>
+                </Form.Item>  
+            </div>
+            <div className="col-span-4 -mt-12">
+                <Form.Item
+                    className="w-full"
+                    label=""
+                    name="address"
+                    rules={[{
+                        required: true, 
+                        message: "Гэрийн хаяг талбарыг бөглөнө үү."
+                    }]}
+                    >
+                    <Input placeholder="Гэрийн хаяг"/>
+                </Form.Item>  
+            </div>
+        
       </div>  
     )  
   };
@@ -237,28 +254,26 @@ const banks = [
     return (
       <>
         <Form.Item
-            label="Банкны нэр"
             name="bankName"
             rules={[{
                 required: true, 
                 message: "Банкны нэр талбарыг бөглөнө үү."
             }]}
         > 
-            <Select placeholder="Сонгоно уу.">
+            <Select placeholder="Банкны нэр сонгох">
                 {banks.map((item, index) => (
                     <Select.Option key={index} value={item.value}>{item.name}</Select.Option>
                 ))}
             </Select>
         </Form.Item>
         <Form.Item
-            label="Банкны дансны дугаар"
             name="bankAccountNumber"
             rules={[{
                 required: true, 
                 message: "Банкны дансны дугаар талбарыг бөглөнө үү."
             }]}
         >
-            <Input />
+            <Input placeholder="Банкны дансны дугаар"/>
         </Form.Item>  
       </>  
     )  
@@ -275,8 +290,15 @@ const banks = [
   
   export const SupportingDocuments = (props) => {
   
+    const [ fileList, setFileList ] = useState([])
+
     const normFile = (e) => {
+
+      console.log("GETTING VALUE: ", e);
+      console.log("GETTING VALUE URL: ", e?.file?.response?.url);
+    //   form.setFieldvalue('')
       return e && e?.file?.response?.url;
+    
     };
   
     const uploader = (info) => {    
@@ -288,87 +310,83 @@ const banks = [
         message.error(`${info.file.name} file upload failed.`);
       }
     }
+
+    const normFileList = (list) => {
+
+        console.log("AM I HERE: ", list);
+
+        setFileList(list);
+
+        if(!list?.file?.response?.url) return false
+
+        let url = !list?.file?.response?.url;
+
+        // normFile(fileList)
+    }
   
     return (
         <>
-            <div className="w-80 mb-4 border border-blue-600 p-2 rounded text-blue-600">Хэвэлмэл картын зургыг оруулна уу.</div>
-            <Form.Item
-                label="Картын зураг"
-                name="redeemPhoto"
-                valuePropName="file"
-                getValueFromEvent={normFile}
-                rules={[{
-                    required: true, 
-                    message: "Урд тал талбарыг бөглөнө үү."
-                }]}
-            >
-                <Upload
-                    name="file" 
-                    listType="picture"
-                    action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
-                    onChange={uploader}
-                >
-                <Button icon={<UploadOutlined />}>Upload</Button>
-                </Upload>
-            </Form.Item>
-            <Form.Item
-                name="isAdult"
-                label="Насанд хүрсэн эсэх"
-                rules={[{
-                    required: true, 
-                    message: "Насанд хүрсэн эсэх талбарыг бөглөнө үү."
-                }]}
-            >
-                <Radio.Group>
-                    <Radio value="1">Тийм</Radio>
-                    <Radio value="0">Үгүй</Radio>
-                </Radio.Group>
-            </Form.Item>
-            <div className="w-80 mb-4 border border-blue-600 p-2 rounded text-blue-600">{props.state == true ? 'Иргэний үнэмлэхний зураг оруулна уу!' : 'Эцэг эхийн иргэний үнэмлэх!'}</div>
-            <Form.Item
-                label="Урд тал"
-                name="idFront"
-                valuePropName="file"
-                getValueFromEvent={normFile}
-                rules={[{
-                    required: true, 
-                    message: "Урд тал талбарыг бөглөнө үү."
-                }]}
-            >
-                <Upload
-                    name="file" 
-                    listType="picture"
-                    action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
-                    onChange={uploader}
-                >
-                <Button icon={<UploadOutlined />}>Upload</Button>
-                </Upload>
-            </Form.Item>
-            <Form.Item
-                label="Хойд тал"
-                name="idBack"
-                valuePropName="file"
-                getValueFromEvent={normFile}
-                rules={[{
-                    required: true, 
-                    message: "Хойд тал талбарыг бөглөнө үү."
-                }]}
-            >
-                <Upload
-                    name="file" 
-                    listType="picture"
-                    action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
-                    onChange={uploader}
-                >
-                <Button icon={<UploadOutlined />}>Upload</Button>
-                </Upload>
-            </Form.Item>
-            {props.state == false && (
-                <>
-                    <div className="w-80 mx-auto mb-4 border border-blue-600 p-2 rounded text-blue-600">Төрсөний гэрчилгээний зураг оруулна уу!</div>
+            <div className="grid grid-cols-4 gap-12">
+                <div className="md:col-span-2 col-span-4">
+                    {/* <div className="w-80 mb-4 border border-blue-600 p-2 rounded text-blue-600">Хэвэлмэл картын зургыг оруулна уу.</div> */}
                     <Form.Item
-                        label="Урд тал"
-                        name="birthCertificateFront"
+                        // label="Картын зураг"
+                        name="redeemPhoto"
+                        valuePropName="file"
+                        getValueFromEvent={normFile}
+                        rules={[{
+                            required: true, 
+                            message: "Картын зураг талбарыг бөглөнө үү."
+                        }]}
+                    >
+                        {/* <Dragger normFileList={normFileList} itemName="redeemPhoto" uploader={uploader}/> */}
+                        <Upload.Dragger
+                            name="file" 
+                            listType="picture"
+                            action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
+                            onChange={uploader}
+                        >
+
+                            <div className="grid grid-cols-12 mx-4 gap-2">
+                                <div
+                                    className="col-span-1"
+                                    style={{
+                                        backgroundSize: "contain",
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundImage: 'url(https://res.cloudinary.com/daliec2ib/image/upload/v1659795030/BKO/assets/feather_upload-cloud_v8va8k.png)'
+                                    }}
+                                >
+
+                                </div>
+                                <div className="col-span-7">
+                                    <div style={{color: "#5BA8FF", fontSize: "11px"}}>Хэвлэмэл картын зургийг оруулна уу</div>
+                                    <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
+                                </div>
+                                <div className="col-span-4">
+                                    <Button block type="primary" ghost>Зураг оруулах</Button>
+                                </div>
+                            </div>
+
+                            {/* <Button icon={<UploadOutlined />}>Upload</Button> */}
+                        </Upload.Dragger>
+                    </Form.Item>
+                    <Form.Item
+                        name="isAdult"
+                        label="Насанд хүрсэн эсэх"
+                        rules={[{
+                            required: true, 
+                            message: "Насанд хүрсэн эсэх талбарыг бөглөнө үү."
+                        }]}
+                    >
+                        <Radio.Group>
+                            <Radio value="1">Тийм</Radio>
+                            <Radio value="0">Үгүй</Radio>
+                        </Radio.Group>
+                    </Form.Item>
+                </div>
+                <div className="md:col-span-2 col-span-4">
+                    <Form.Item
+                        name="idFront"
                         valuePropName="file"
                         getValueFromEvent={normFile}
                         rules={[{
@@ -376,18 +394,40 @@ const banks = [
                             message: "Урд тал талбарыг бөглөнө үү."
                         }]}
                     >
-                        <Upload
-                        name="file" 
-                        listType="picture"
-                        action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
-                        onChange={uploader}
+                        {/* <Dragger uploader={uploader}/> */}
+
+                        <Upload.Dragger
+                            name="file" 
+                            listType="picture"
+                            action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
+                            onChange={uploader}
                         >
-                        <Button icon={<UploadOutlined />}>Upload</Button>
-                        </Upload>
+
+                            <div className="grid grid-cols-12 mx-4 gap-2">
+                                <div
+                                    className="col-span-1"
+                                    style={{
+                                        backgroundSize: "contain",
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundImage: 'url(https://res.cloudinary.com/daliec2ib/image/upload/v1659795030/BKO/assets/feather_upload-cloud_v8va8k.png)'
+                                    }}
+                                >
+
+                                </div>
+                                <div className="col-span-7">
+                                    <div style={{color: "#5BA8FF", fontSize: "11px"}}>Иргэний үнэмлэхний урд тал</div>
+                                    <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
+                                </div>
+                                <div className="col-span-4">
+                                    <Button block type="primary" ghost>Зураг оруулах</Button>
+                                </div>
+                            </div>
+
+                            {/* <Button icon={<UploadOutlined />}>Upload</Button> */}
+                        </Upload.Dragger>
                     </Form.Item>
                     <Form.Item
-                        label="Хойд тал"
-                        name="birthCertificateBack"
+                        name="idBack"
                         valuePropName="file"
                         getValueFromEvent={normFile}
                         rules={[{
@@ -395,17 +435,120 @@ const banks = [
                             message: "Хойд тал талбарыг бөглөнө үү."
                         }]}
                     >
-                        <Upload
-                        name="file" 
-                        listType="picture"
-                        action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
-                        onChange={uploader}
+                        <Upload.Dragger
+                            name="file" 
+                            listType="picture"
+                            action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
+                            onChange={uploader}
                         >
-                        <Button icon={<UploadOutlined />}>Upload</Button>
-                        </Upload>
+
+                            <div className="grid grid-cols-12 mx-4 gap-2">
+                                <div
+                                    className="col-span-1"
+                                    style={{
+                                        backgroundSize: "contain",
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundImage: 'url(https://res.cloudinary.com/daliec2ib/image/upload/v1659795030/BKO/assets/feather_upload-cloud_v8va8k.png)'
+                                    }}
+                                >
+
+                                </div>
+                                <div className="col-span-7">
+                                    <div style={{color: "#5BA8FF", fontSize: "11px"}}>Иргэний үнэмлэхний ард тал</div>
+                                    <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
+                                </div>
+                                <div className="col-span-4">
+                                    <Button block type="primary" ghost>Зураг оруулах</Button>
+                                </div>
+                            </div>
+
+                            {/* <Button icon={<UploadOutlined />}>Upload</Button> */}
+                        </Upload.Dragger>
                     </Form.Item>
-                </>
-            )}
+                    {props.state == false && (
+                        <>
+                            <Form.Item
+                                name="birthCertificateFront"
+                                valuePropName="file"
+                                getValueFromEvent={normFile}
+                                rules={[{
+                                    required: true, 
+                                    message: "Урд тал талбарыг бөглөнө үү."
+                                }]}
+                            >
+                                <Upload.Dragger
+                                    name="file" 
+                                    listType="picture"
+                                    action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
+                                    onChange={uploader}
+                                >
+
+                                    <div className="grid grid-cols-12 mx-4 gap-2">
+                                        <div
+                                            className="col-span-1"
+                                            style={{
+                                                backgroundSize: "contain",
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundImage: 'url(https://res.cloudinary.com/daliec2ib/image/upload/v1659795030/BKO/assets/feather_upload-cloud_v8va8k.png)'
+                                            }}
+                                        >
+
+                                        </div>
+                                        <div className="col-span-7">
+                                            <div style={{color: "#5BA8FF", fontSize: "11px"}}>Төрсөний гэрчилгээний урд тал</div>
+                                            <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
+                                        </div>
+                                        <div className="col-span-4">
+                                            <Button block type="primary" ghost>Зураг оруулах</Button>
+                                        </div>
+                                    </div>
+
+                                    {/* <Button icon={<UploadOutlined />}>Upload</Button> */}
+                                </Upload.Dragger>
+                            </Form.Item>
+                            <Form.Item
+                                name="birthCertificateBack"
+                                valuePropName="file"
+                                getValueFromEvent={normFile}
+                                rules={[{
+                                    required: true, 
+                                    message: "Хойд тал талбарыг бөглөнө үү."
+                                }]}
+                            >
+                                <Upload.Dragger
+                                    name="file" 
+                                    listType="picture"
+                                    action="https://api.cloudinary.com/v1_1/daliec2ib/image/upload?upload_preset=bkoupload"
+                                    onChange={uploader}
+                                >
+
+                                    <div className="grid grid-cols-12 mx-4 gap-2">
+                                        <div
+                                            className="col-span-1"
+                                            style={{
+                                                backgroundSize: "contain",
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundImage: 'url(https://res.cloudinary.com/daliec2ib/image/upload/v1659795030/BKO/assets/feather_upload-cloud_v8va8k.png)'
+                                            }}
+                                        >
+
+                                        </div>
+                                        <div className="col-span-7">
+                                            <div style={{color: "#5BA8FF", fontSize: "11px"}}>Төрсөний гэрчилгээний ард тал</div>
+                                            <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
+                                        </div>
+                                        <div className="col-span-4">
+                                            <Button block type="primary" ghost>Зураг оруулах</Button>
+                                        </div>
+                                    </div>
+
+                                    {/* <Button icon={<UploadOutlined />}>Upload</Button> */}
+                                </Upload.Dragger>
+                            </Form.Item>
+                        </>
+                    )}
+                </div>
+            </div>
         </>
     )  
   };
