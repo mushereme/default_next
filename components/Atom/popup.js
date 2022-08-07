@@ -1,30 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+const [api, contextHolder] = message.useMessage();
 
 
-export class popup extends Component {
+export default Popup = () => {
 
-  success = () => {
-
-  
-    alert("hi")
-
-  }
-
-  callApi = () => {
-    // Get API data
-    
- }
-
-  loading = () => {
-
-  
-    alert("hi")
-
-  }
-
-  render () {
-
-    return <div>Hi</div>
-  }
-
+  return (
+    <div>
+      {/* contextHolder is inside Context1 which means api will get value of Context1 */}
+      {contextHolder}
+    </div>
+  )
 }

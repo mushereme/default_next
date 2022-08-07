@@ -355,7 +355,7 @@ const banks = [
 
                             <div className="grid grid-cols-12 mx-4 gap-2">
                                 <div
-                                    className="col-span-1"
+                                    className="md:col-span-1 col-span-2"
                                     style={{
                                         backgroundSize: "contain",
                                         backgroundRepeat: 'no-repeat',
@@ -364,11 +364,11 @@ const banks = [
                                 >
 
                                 </div>
-                                <div className="col-span-7">
+                                <div className="md:col-span-7 col-span-10">
                                     <div style={{color: "#5BA8FF", fontSize: "11px"}}>Хэвлэмэл картын зургийг оруулна уу</div>
                                     <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                 </div>
-                                <div className="col-span-4">
+                                <div className="md:col-span-4 col-span-1 md:block hidden">
                                     <Button block type="primary" ghost>Зураг</Button>
                                 </div>
                             </div>
@@ -411,7 +411,7 @@ const banks = [
 
                             <div className="grid grid-cols-12 mx-4 gap-2">
                                 <div
-                                    className="col-span-1"
+                                    className="md:col-span-1 col-span-2"
                                     style={{
                                         backgroundSize: "contain",
                                         backgroundRepeat: 'no-repeat',
@@ -420,11 +420,11 @@ const banks = [
                                 >
 
                                 </div>
-                                <div className="col-span-7">
+                                <div className="md:col-span-7 col-span-10">
                                     <div style={{color: "#5BA8FF", fontSize: "11px"}}>Иргэний үнэмлэхний урд тал</div>
                                     <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                 </div>
-                                <div className="col-span-4">
+                                <div className="md:col-span-4 col-span-1 md:block hidden">
                                     <Button block type="primary" ghost>Зураг</Button>
                                 </div>
                             </div>
@@ -450,7 +450,7 @@ const banks = [
 
                             <div className="grid grid-cols-12 mx-4 gap-2">
                                 <div
-                                    className="col-span-1"
+                                    className="md:col-span-1 col-span-2"
                                     style={{
                                         backgroundSize: "contain",
                                         backgroundRepeat: 'no-repeat',
@@ -459,11 +459,11 @@ const banks = [
                                 >
 
                                 </div>
-                                <div className="col-span-7">
+                                <div className="md:col-span-7 col-span-10">
                                     <div style={{color: "#5BA8FF", fontSize: "11px"}}>Иргэний үнэмлэхний ард тал</div>
                                     <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                 </div>
-                                <div className="col-span-4">
+                                <div className="md:col-span-4 col-span-1 md:block hidden">
                                     <Button block type="primary" ghost>Зураг</Button>
                                 </div>
                             </div>
@@ -491,7 +491,7 @@ const banks = [
 
                                     <div className="grid grid-cols-12 mx-4 gap-2">
                                         <div
-                                            className="col-span-1"
+                                            className="md:col-span-1 col-span-2"
                                             style={{
                                                 backgroundSize: "contain",
                                                 backgroundRepeat: 'no-repeat',
@@ -500,11 +500,11 @@ const banks = [
                                         >
 
                                         </div>
-                                        <div className="col-span-7">
+                                        <div className="md:col-span-7 col-span-10">
                                             <div style={{color: "#5BA8FF", fontSize: "11px"}}>Төрсөний гэрчилгээний урд тал</div>
                                             <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                         </div>
-                                        <div className="col-span-4">
+                                        <div className="md:col-span-4 col-span-1 md:block hidden">
                                             <Button block type="primary" ghost>Зураг</Button>
                                         </div>
                                     </div>
@@ -530,7 +530,7 @@ const banks = [
 
                                     <div className="grid grid-cols-12 mx-4 gap-2">
                                         <div
-                                            className="col-span-1"
+                                            className="md:col-span-1 col-span-2"
                                             style={{
                                                 backgroundSize: "contain",
                                                 backgroundRepeat: 'no-repeat',
@@ -539,11 +539,11 @@ const banks = [
                                         >
 
                                         </div>
-                                        <div className="col-span-7">
+                                        <div className="md:col-span-7 col-span-10">
                                             <div style={{color: "#5BA8FF", fontSize: "11px"}}>Төрсөний гэрчилгээний ард тал</div>
                                             <div style={{color: "#E2BA84", fontSize: "11px"}}>JPG, PNG зураг 10MB-с бага хэмжээтэй</div>
                                         </div>
-                                        <div className="col-span-4">
+                                        <div className="md:col-span-4 col-span-1 md:block hidden">
                                             <Button block type="primary" ghost>Зураг</Button>
                                         </div>
                                     </div>

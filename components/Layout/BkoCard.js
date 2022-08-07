@@ -11,7 +11,6 @@ const Card01 = () => {
           <div className="grid md:grid-cols-3 sm:grid-cols-1">
             <div className="text-center">
               <Card02 
-                
                 title="Хамгийн гайхалтай бэлэг" 
                 img="https://res.cloudinary.com/daliec2ib/image/upload/v1659616954/BKO/assets/gift_jphhiz.gif"
               />            

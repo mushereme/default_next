@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { loadApi } from "../utils/axios/main";
 
-import { message } from "antd";
+import { message, notification } from "antd";
 import { useRouter } from 'next/router'
 import { ppid } from "process";
 
@@ -23,10 +23,15 @@ export const RedeemStore = (props) => {
   const [ state, setState ] = useState(initialState);
 
   useEffect(() => {
-    state.success && message.success(state.success); clearSuccess();
+    state.success && successNotification(state.success); clearSuccess();
     state.loading && message.loading(state.loading); clearLoading();
-    state.error && message.error(state.error); clearError();
+    state.error && errorNotification(state.error); clearError();
   }, [state.success, state.error]);
+  // useEffect(() => {
+  //   state.success && message.success(state.success); clearSuccess();
+  //   state.loading && message.loading(state.loading); clearLoading();
+  //   state.error && message.error(state.error); clearError();
+  // }, [state.success, state.error]);
 
   
   const checkRedeem = async (value) => {
@@ -103,13 +108,7 @@ export const RedeemStore = (props) => {
       setState({
         ...state,
         redeem: resp,
-        success: `
-          МЭДЭЭЛЛИЙГ ХҮЛЭЭН АВЛАА
-          ТАНЫ "БКО-БЭЛГИЙН КАРТ" ИДЭВХИЖЛЭЭ.
-          ТАНЫ ҮНЭТ ЦААСНЫ ДАНС НЭЭГДСЭНИЙ ДАРАА БИД ТАНТАЙ ЭРГЭН ХОЛБОГДОХ БОЛНО
-          
-          ТАНЫ ХӨРӨНГӨ ОРУУЛАЛТАНД АМЖИЛТ ХҮСЭЕ.
-        `
+        success: `Таны кодыг хүлээн авлаа`
       });
       router.push('/');
     }).catch((err) => {
@@ -145,11 +144,29 @@ export const RedeemStore = (props) => {
     })
   }
 
+  const successNotification = (success) => {
+
+    notification.success({
+      message: success,
+      // description: '',
+      placement: 'top'
+    })
+  } 
+
   const clearSuccess = () => {
 
     setState({
       ...state,
       success: null
+    })
+  }
+
+  const errorNotification = (error) => {
+
+    notification.error({
+      message: error,
+      // description: 'asdfasd',
+      placement: 'top'
     })
   }
 

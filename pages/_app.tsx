@@ -51,12 +51,12 @@ function MyApp({ Component, pageProps }: AppProps) {
               </Content>
               <Footer>
                 <div className='container mx-auto'>
-                  <div className="grid grid-cols-6">
-                    <div className="md:col-span-3 col-span-2 mr-auto"> 
+                  <div className="grid grid-cols-6 md:mx-0">
+                    <div className="md:col-span-3 col-span-1 mr-auto"> 
                       <BkoSocials />
                       {/* <img src='https://res.cloudinary.com/daliec2ib/image/upload/v1658147950/BKO/assets/273269846_956798281707222_3269984056906119710_n_gccix1.png' width="50px" height="auto"/> */}
                     </div>
-                    <div className="md:col-span-3 col-span-4 ml-auto">
+                    <div className="md:col-span-3 col-span-5 ml-auto">
                       <BkoContact />
                     </div>  
                   </div>

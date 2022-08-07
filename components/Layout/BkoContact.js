@@ -9,7 +9,7 @@ const BkoLogo = () => {
         className="flex items-center justify-start w-auto"
       >
         <div
-          className="md:w-10 md:h-10 w-6 h-6 mr-3"
+          className="md:w-10 md:h-10 w-6 h-6 mr-3 md:block hidden"
           style={{
             backgroundSize: "contain",
             backgroundPosition: "center",
@@ -42,7 +42,7 @@ const BkoLogo = () => {
         className="flex items-center justify-start w-auto -mt-4"
       >
         <div
-          className="md:w-10 md:h-10 w-6 h-6 mr-3"
+          className="md:w-10 md:h-10 w-6 h-6 mr-3 md:block hidden"
           style={{
             backgroundSize: "contain",
             backgroundPosition: "center",

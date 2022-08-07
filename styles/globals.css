@@ -2149,3 +2149,13 @@ html {
 .bko-border .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
  background: none;
 }
+
+.ant-notification-notice-message {
+ text-decoration: uppercase !important;
+        color: #5BA8FF !important;
+}
+
+.ant-notification-notice-with-icon .ant-notification-notice-message {
+ text-decoration: uppercase !important;
+
+}
