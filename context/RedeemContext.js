@@ -22,16 +22,17 @@ export const RedeemStore = (props) => {
     
   const [ state, setState ] = useState(initialState);
 
-  useEffect(() => {
-    state.success && successNotification(state.success); clearSuccess();
-    state.loading && message.loading(state.loading); clearLoading();
-    state.error && errorNotification(state.error); clearError();
-  }, [state.success, state.error]);
   // useEffect(() => {
-  //   state.success && message.success(state.success); clearSuccess();
+  //   state.success && successNotification(state.success); clearSuccess();
   //   state.loading && message.loading(state.loading); clearLoading();
-  //   state.error && message.error(state.error); clearError();
+  //   state.error && errorNotification(state.error); clearError();
   // }, [state.success, state.error]);
+
+  useEffect(() => {
+    state.success && message.success({content: state.success, style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearSuccess();
+    state.loading && message.loading(state.loading); clearLoading();
+    state.error && message.error({content: state.error, className: "bko-notification", style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearError();
+  }, [state.success, state.error]);
 
   
   const checkRedeem = async (value) => {
@@ -149,7 +150,11 @@ export const RedeemStore = (props) => {
     notification.success({
       message: success,
       // description: '',
-      placement: 'top'
+      placement: 'top',
+      style: {
+        width: 600,
+        marginTop: "150px"
+      },
     })
   } 
 
@@ -166,7 +171,11 @@ export const RedeemStore = (props) => {
     notification.error({
       message: error,
       // description: 'asdfasd',
-      placement: 'top'
+      placement: 'top',
+      style: {
+        width: 600,
+        marginTop: "150px"
+      },
     })
   }
 
