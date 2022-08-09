@@ -9,7 +9,7 @@ export const RedeemHeader = (props) => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-4 h-screen">  
+      <div className="grid grid-cols-4 md:h-screen h-auto">  
         <div className="col-span-4 xl:col-span-2 my-auto">
           <div 
             className="mx-auto" 
