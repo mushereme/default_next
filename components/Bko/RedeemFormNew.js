@@ -31,7 +31,7 @@ const RedeemFormNew = (props) => {
   }
 
   return (
-    <div className="bko-border">
+    <div className="bko-border -mb-6">
       <Form
         onFinish={onFinish}
       >
