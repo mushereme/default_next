@@ -190,7 +190,7 @@ const banks = [
                     message: "Овог талбарыг бөглөнө үү."
                     }]}
                     >
-                    <Input placeholder="Овог"/>
+                    <Input placeholder="Нэр"/>
                 </Form.Item> 
             </div>
             <div className="md:col-span-2 col-span-4">
