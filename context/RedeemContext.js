@@ -28,11 +28,19 @@ export const RedeemStore = (props) => {
   //   state.error && errorNotification(state.error); clearError();
   // }, [state.success, state.error]);
 
-  useEffect(() => {
-    state.success && message.success({content: state.success, style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearSuccess();
-    state.loading && message.loading(state.loading); clearLoading();
-    state.error && message.error({content: state.error, className: "bko-notification", style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearError();
-  }, [state.success, state.error]);
+
+  // useEffect(() => {
+  //   // state.success && message.success({content: state.success, style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearSuccess();
+  //   // state.loading && message.loading(state.loading); clearLoading();
+  //   state.error && message.error({content: state.error, className: "bko-notification", style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearError();
+  // }, [state.error]);
+  
+  // useEffect(() => {
+  //   state.success && message.success({content: state.success, style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearSuccess();
+  //   // state.loading && message.loading(state.loading); clearLoading();
+  //   // state.error && message.error({content: state.error, className: "bko-notification", style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3}); clearError();
+  // }, [state.success]);
+
 
   
   const checkRedeem = async (value) => {
@@ -58,6 +66,9 @@ export const RedeemStore = (props) => {
       });
       router.push('/registration');
     }).catch((err) => {
+
+
+      errorNotification(err.message)
       setState({
         ...state,
         error: err.message
@@ -85,7 +96,7 @@ export const RedeemStore = (props) => {
       // console.log("ERR: ", err);
       setState({
         ...state,
-        error: err.message
+        // error: err.message
       });
     });
 
@@ -109,8 +120,9 @@ export const RedeemStore = (props) => {
       setState({
         ...state,
         redeem: resp,
-        success: `Таны кодыг хүлээн авлаа`
+        success: null
       });
+      successNotification('Таны кодыг хүлээн авлаа')
       router.push('/');
     }).catch((err) => {
       // console.log("ERR: ", err);
@@ -146,16 +158,18 @@ export const RedeemStore = (props) => {
   }
 
   const successNotification = (success) => {
+    // console.log("SUCC")
+    message.success({content: success, style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3});
 
-    notification.success({
-      message: success,
-      // description: '',
-      placement: 'top',
-      style: {
-        width: 600,
-        marginTop: "150px"
-      },
-    })
+    // notification.success({
+    //   message: success,
+    //   // description: '',
+    //   placement: 'top',
+    //   style: {
+    //     width: 600,
+    //     marginTop: "150px"
+    //   },
+    // })
   } 
 
   const clearSuccess = () => {
@@ -167,16 +181,8 @@ export const RedeemStore = (props) => {
   }
 
   const errorNotification = (error) => {
-
-    notification.error({
-      message: error,
-      // description: 'asdfasd',
-      placement: 'top',
-      style: {
-        width: 600,
-        marginTop: "150px"
-      },
-    })
+    // console.log("ERRR")
+    message.error({content: error, className: "bko-notification", style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3});
   }
 
   const clearError = () => {
