@@ -35,8 +35,7 @@ const RedeemFormNew = (props) => {
       <Form
         onFinish={onFinish}
       >
-        
-        <div className="md:block hidden">
+        <div className="md:block hidden md:mb-8 mb-6">
           <Form.Item
             name="serialNumber"
           >
@@ -48,7 +47,7 @@ const RedeemFormNew = (props) => {
             />
           </Form.Item>
         </div>
-        <div className="md:hidden block">
+        <div className="md:hidden block md:mb-8 mb-6">
           <Form.Item
             name="serialNumber"
             >
