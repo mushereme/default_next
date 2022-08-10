@@ -91,7 +91,7 @@ class SingleOtpInput extends PureComponent {
               width: '30px', 
               textAlign: 'center', 
               height: '40px',
-              margin: '2px',
+              margin: '1px',
               border: '1px solid #5BA8FF', 
               borderRadius: '4px',
               color: '#5BA8FF',

@@ -10,7 +10,7 @@ module.exports = {
         '196': '48rem',
         '256': '64rem'
       }
-    },
+    },  
   },
   plugins: [],
 }

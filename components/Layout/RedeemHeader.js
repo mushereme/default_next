@@ -9,8 +9,8 @@ export const RedeemHeader = (props) => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-4 md:h-screen h-auto">  
-        <div className="col-span-4 xl:col-span-2 my-auto">
+      <div className="grid grid-cols-12 md:h-screen h-auto">  
+        <div className="col-span-12 sm:col-span-6 my-auto">
           <div 
             className="mx-auto" 
             style={{
@@ -88,7 +88,7 @@ export const RedeemHeader = (props) => {
           </div>
         </div>
         <div 
-          className="hidden col-span-2 xl:block"
+          className="col-span-6"
         >
           <div
             className="m-5 rounded-xl"

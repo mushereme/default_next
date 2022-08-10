@@ -35,7 +35,7 @@ export const RedeemForm = (props) => {
       autoComplete="off"
     >
             <div 
-              className="md:block hidden"
+              className="sm:block hidden"
             >
               <Form.Item
                 name="serialNumber"

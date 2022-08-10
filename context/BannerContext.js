@@ -43,7 +43,7 @@ export const BannerStore = (props) => {
     }).catch((err) => {
       setState({
         ...state,
-        error: err.message
+        error: err?.message
       });
     });
   };
