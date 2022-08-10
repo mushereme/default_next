@@ -9,18 +9,18 @@ export const RedeemHeader = (props) => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-12 md:h-screen h-auto">  
-        <div className="col-span-12 sm:col-span-6 my-auto">
+      <div className="grid grid-cols-12 lg:h-screen h-auto">  
+        <div className="col-span-12 lg:col-span-6 my-auto">
           <div 
             className="mx-auto" 
             style={{
               maxWidth: "700px"
             }}
           >
-            <div className="md:mt-6 mt-6 md:mx-8 mx-2">
+            <div className="xl:mt-6 lg:mt-3 lg:mx-2 md:mt-6 mt-6 md:mx-8 mx-2">
               <div className="mx-auto text-center">
                 <div
-                  className="md:h-36 h-24"
+                  className="xl:36 lg:h-24 md:h-36 h-24"
                   style={{
                     maxHeight: "134px",
                     backgroundRepeat: 'no-repeat',
@@ -31,7 +31,7 @@ export const RedeemHeader = (props) => {
                 >
                 </div>
                 <div
-                  className="md:h-14 h-10 md:my-6 my-4"
+                  className="xl:h-14 lg:h-8 md:h-14 h-10 md:my-6 my-4"
                   style={{
                     maxHeight: "134px",
                     backgroundRepeat: 'no-repeat',
@@ -43,7 +43,7 @@ export const RedeemHeader = (props) => {
                 >
                 </div>
               </div>
-              <div className="bg-white rounded-xl md:p-12 p-8 mx-6 shadow-xl">
+              <div className="bg-white rounded-xl xl:p-12 lg:p-6 md:p-12 p-8 mx-6 shadow-xl">
                 <div 
                   className=""
                 >
@@ -88,7 +88,7 @@ export const RedeemHeader = (props) => {
           </div>
         </div>
         <div 
-          className="col-span-6"
+          className="lg:block col-span-6 hidden"
         >
           <div
             className="m-5 rounded-xl"
