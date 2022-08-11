@@ -82,7 +82,7 @@ export const RedeemStore = (props) => {
 
     await loadApi({
       method: "get",
-      url: "/customer",
+      url: "/customer/check",
       query: "registerNumber:" + value.registerNumber,
       parameters: {}
     }).then((resp) => {
