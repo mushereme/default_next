@@ -68,10 +68,10 @@ export const RedeemStore = (props) => {
     }).catch((err) => {
 
 
-      errorNotification(err.message)
+      errorNotification(err?.message || 'Алдаа гарлаа')
       setState({
         ...state,
-        error: err.message
+        error: err?.message
       });
     });
   };
@@ -129,7 +129,7 @@ export const RedeemStore = (props) => {
 
       setState({
         ...state,
-        error: err.message
+        error: err?.message
       });
     });
   };
@@ -181,7 +181,7 @@ export const RedeemStore = (props) => {
   }
 
   const errorNotification = (error) => {
-    // console.log("ERRR")
+    // console.log("ERRR", error)
     message.error({content: error, className: "bko-notification", style: {marginTop: '10vh', fontSize: '28px', color: '#5BA8FF', fontWeight: 550}, duration: 3});
   }
 
