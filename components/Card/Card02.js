@@ -6,9 +6,9 @@ const Card02 = (props) => {
   const { img, title } = props;
 
   return (
-    <div className="p-4 m-4 text-center">
+    <div className="2xl:m-3 2xl:p-3  xl:m-2 xl:p-2 lg:m-2 lg:p-2 md:p-4 md:m-4 m-2 p-2 text-center">
       <div
-        className="h-36"
+        className="2xl:h-36 xl:h-24 lg:12 md:h-36 h-24"
         style={{
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',

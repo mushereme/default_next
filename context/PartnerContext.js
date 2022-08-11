@@ -46,7 +46,7 @@ export const PartnerStore = (props) => {
     }).catch((err) => {
       setState({
         ...state,
-        error: err.message
+        error: err?.message
       });
     });
   };

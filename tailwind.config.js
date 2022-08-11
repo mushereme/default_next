@@ -11,6 +11,15 @@ module.exports = {
         '256': '64rem'
       }
     },
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '0.3rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
   },
   plugins: [],
 }
